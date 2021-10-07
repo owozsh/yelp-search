@@ -12,7 +12,17 @@ const App = () => {
         <Stack.Screen
           name="Home"
           component={SearchView}
-          options={{ title: 'Yelp Search' }}
+          options={{
+            title: 'Yelp Search',
+            headerStyle: {
+              backgroundColor: '#d32323',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+            headerShadowVisible: false,
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
