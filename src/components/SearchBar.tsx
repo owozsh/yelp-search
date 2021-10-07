@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Text, View, Button, TextInput, StyleSheet } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
-const SearchBar = () => {
-  const [searchInput, setSearchInput] = useState('');
-
+const SearchBar = ({ searchInput, onSearchInputChange }) => {
   return (
     <View style={styles.searchBarContainer}>
       <View style={styles.searchBar}>
-        <Feather name="search" size={20} />
+        <Feather name="search" style={styles.searchIcon} />
         <TextInput
-          style={styles.SearchBarTextInput}
+          style={styles.searchBarTextInput}
           placeholder={'Search'}
           autoCorrect={false}
           autoCapitalize={'none'}
+          value={searchInput}
+          onChangeText={(newSearchInput) => onSearchInputChange(newSearchInput)}
         />
       </View>
     </View>
@@ -29,15 +29,19 @@ const styles = StyleSheet.create({
   },
   searchBar: {
     backgroundColor: '#fff',
-    padding: 10,
     borderRadius: 10,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
   },
-  SearchBarTextInput: {
+  searchBarTextInput: {
     width: '100%',
-    marginLeft: 10,
+    padding: 10,
+  },
+  searchIcon: {
+    fontSize: 20,
+    padding: 10,
+    paddingRight: 0,
   },
 });
 
