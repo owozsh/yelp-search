@@ -40,7 +40,7 @@ const SearchView = () => {
   );
 
   return (
-    <View>
+    <View style={styles.container}>
       <SearchBar
         searchInput={searchInput}
         onSearchInputChange={setSearchInput}
@@ -59,8 +59,12 @@ const SearchView = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   list: {
     height: '100%',
+    overflow: 'scroll',
   },
 });
 
