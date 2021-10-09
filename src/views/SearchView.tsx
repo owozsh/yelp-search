@@ -1,13 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import {
-  Text,
-  View,
-  Button,
-  TextInput,
-  StyleSheet,
-  FlatList,
-} from 'react-native';
+import { Text, View, StyleSheet, FlatList } from 'react-native';
 
 import SearchBar from '../components/SearchBar';
 import SearchResultCard from '../components/SearchResultCard';
